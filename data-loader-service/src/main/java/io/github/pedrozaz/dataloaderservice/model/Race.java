@@ -36,7 +36,7 @@ public class Race extends AbstractAuditableEntity{
     @Column(nullable = false)
     private LocalDate date;
 
-    @Column(name = "\"time\"")
+    @Column(name = "\"time\"", columnDefinition = "TIME")
     private LocalTime time;
 
     @Column(unique = true)

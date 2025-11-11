@@ -32,7 +32,7 @@ public class PitStop {
     @Column(nullable = false)
     private Integer lap;
 
-    @Column(name = "\"time\"", nullable = false)
+    @Column(name = "\"time\"", nullable = false, columnDefinition = "TIME")
     private LocalDateTime time;
 
     private String duration;
