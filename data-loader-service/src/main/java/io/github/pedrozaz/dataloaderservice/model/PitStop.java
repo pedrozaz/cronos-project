@@ -5,35 +5,29 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Entity
-@Table(name = "pit_stops", uniqueConstraints = {
-        @UniqueConstraint(name = "uk_race_driver_stop", columnNames = {"race_id", "driver_id", "stop"})
-})
+@Table(name = "pit_stops")
 @Getter @Setter @NoArgsConstructor
 public class PitStop {
-    @Id
-    @Column(name = "pit_stop_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long pitStopId;
+
+    @EmbeddedId
+    private PitStopId id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "race_id", nullable = false)
+    @JoinColumn(name = "race_id", updatable = false, insertable = false)
     private Race race;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "driver_id", nullable = false)
+    @JoinColumn(name = "driver_id", updatable = false, insertable = false)
     private Driver driver;
-
-    @Column(nullable = false)
-    private Integer stop;
 
     @Column(nullable = false)
     private Integer lap;
 
     @Column(name = "\"time\"", nullable = false, columnDefinition = "TIME")
-    private LocalDateTime time;
+    private LocalTime time;
 
     private String duration;
     private Integer milliseconds;

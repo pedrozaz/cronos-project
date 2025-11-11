@@ -16,7 +16,6 @@ import java.time.LocalTime;
 public class Race extends AbstractAuditableEntity{
     @Id
     @Column(name = "race_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long raceId;
 
     @ManyToOne(fetch = FetchType.LAZY)

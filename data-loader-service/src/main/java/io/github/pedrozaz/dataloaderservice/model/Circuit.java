@@ -11,7 +11,6 @@ import lombok.Setter;
 public class Circuit extends AbstractAuditableEntity {
     @Id
     @Column(name = "circuit_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "circuit_ref", nullable = false, unique = true)

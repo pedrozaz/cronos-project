@@ -13,7 +13,6 @@ import lombok.Setter;
 public class Result {
     @Id
     @Column(name = "result_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long resultId;
 
     @ManyToOne(fetch = FetchType.LAZY)

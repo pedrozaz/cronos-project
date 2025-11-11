@@ -13,7 +13,6 @@ import java.time.LocalDate;
 public class Driver extends AbstractAuditableEntity {
     @Id
     @Column(name = "driver_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long driverId;
 
     @Column(name = "driver_ref", nullable = false, unique = true)

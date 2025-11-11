@@ -11,7 +11,6 @@ import lombok.Setter;
 public class Constructor extends AbstractAuditableEntity {
     @Id
     @Column(name = "constructor_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long constructorId;
 
     @Column(name = "constructor_ref", nullable = false, unique = true)
