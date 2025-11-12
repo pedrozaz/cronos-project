@@ -11,7 +11,7 @@ import lombok.Setter;
 public class Circuit extends AbstractAuditableEntity {
     @Id
     @Column(name = "circuit_id")
-    private Long id;
+    private Long circuitId;
 
     @Column(name = "circuit_ref", nullable = false, unique = true)
     private String circuitRef;
@@ -24,4 +24,5 @@ public class Circuit extends AbstractAuditableEntity {
     private Float latitude;
     private Float longitude;
     private Integer altitude;
+    private String url;
 }
